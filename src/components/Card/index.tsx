@@ -1,9 +1,9 @@
 import React from 'react';
 import Foto from '../../assets/rascunho.png';
 
-import {FiThumbsUp, FiFlag} from 'react-icons/fi';
+import {FiThumbsUp, FiFlag, FiStar} from 'react-icons/fi';
 
-import {Container, UserInfo, CardInfo, RateInfo, LikeInfo, Impacto} from './styles';
+import {Container, UserInfo, CardInfo, Categoria, LikeInfo, Impacto, Infos} from './styles';
 const Card: React.FC = () => {
     return (
 
@@ -26,41 +26,25 @@ const Card: React.FC = () => {
                 <p>Rua Osmindo Dietrich, Centro - Igrejinha</p>
             </CardInfo>
 
-            <RateInfo>
-                <div>
+            <Infos>
+                <Categoria>
                     <p>Ameaça</p>
+                </Categoria>
 
-                    <Impacto>
+                    <title>Impacto</title>
+                <Impacto>
 
-                    </Impacto>
-                </div>
-            </RateInfo>
+                    <button style={{backgroundColor: "green"}} >Baixa</button>
+                    <button style={{backgroundColor: "yellow"}} >Media</button>
+                    <button style={{backgroundColor: "red"}} >Alta</button>
 
+                </Impacto>
+            </Infos>
+
+            
         </Container>
 
-        <Container>
-            <UserInfo>
-                <img src={Foto}></img>
-                <p>Leona TRINKADENT</p>
-
-                <LikeInfo>
-                <button onClick={ () => console.log('test')}><FiThumbsUp/></button>
-                    <p>23 concordancias</p>
-                </LikeInfo>
-            </UserInfo>
-
-            <CardInfo>
-                <h1>Uso de drogas</h1>
-                <p>os cria do ap 606 estao fora de controle</p>
-
-                <p>Rua Osmindo Dietrich, Centro - Igrejinha</p>
-            </CardInfo>
-
-            <RateInfo>
-
-            </RateInfo>
-
-        </Container>
+         
 
         </>
     );

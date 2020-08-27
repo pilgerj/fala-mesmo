@@ -106,30 +106,70 @@ export const CardInfo = styled.div`
     }
 `;
 
-export const RateInfo = styled.div`
+export const Infos = styled.div`
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    
+    width: 200px;
+
+    title {
+        margin-top: 20px;
+        width: 100%;
+        background-color: white;
+    }
+`;
+
+export const Categoria = styled.div`
     padding: 10px;
     border-radius: 200px;
+    margin-right: 175px;
 
     float: left;
     
-    width: 300px;
+    width: 200px;
     float:left;
     background-color: red;
 
-   display: flex;
-   align-items:center;
-   justify-content: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 
     p { 
-        
-        display: flex;
-        align-items: center;
-        top: 5px;
-        background-color:red;
-
+    align-items: center;
+    top: 5px;
+    background-color:red;
     }
 
 `;
 
-export const Impacto = styled.div``;
+export const Impacto = styled.div`
+    display: flex;
+    float: left;
+    align-items:center;
+    justify-content: space-between;
+    margin-right: 180px;
+    background-color: white;
+    
+    button {
+        padding: 20px;
+        width: 60px;
+        margin: 5px;
+        border-radius:50px;
+        border: 0px;
+
+        display: flex;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+
+
+`;
+
 
