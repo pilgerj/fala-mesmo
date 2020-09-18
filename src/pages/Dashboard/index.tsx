@@ -1,4 +1,4 @@
-import React, {useEffect, useState, FormEvent, ChangeEvent, Fragment, useRef, useCallback} from 'react';
+import React, {useEffect, useState, useCallback, ChangeEvent, Fragment, useRef, useCallback} from 'react';
 
 import {Form} from '@unform/web';
 import {FormHandles} from '@unform/core';
@@ -6,6 +6,7 @@ import {FormHandles} from '@unform/core';
 import Card from '../../components/Card';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import ComboBox from '../../components/ComboBox';
 
 import {FiBookmark, FiMapPin, FiTag, FiAlignJustify, FiZap} from 'react-icons/fi';
 import {Title, CardContainer} from './styles';
@@ -15,12 +16,23 @@ import {Title, CardContainer} from './styles';
 //import * as Yup from 'yup';
 //import getValidationErrors from '../../utils/getValidationErrors';
 
+interface FormData {
+    title: string;
+    description: string;
+    address: string;
+    category: string;
+    //impact: string,
+}
+
 const Dashboard: React.FC = () => {
     const formRef = useRef<FormHandles>(null);
     
     const [formData, setFormData] = useState({
         title: '',
         description: '',
+        address: '',
+        category: '',
+        impact: '',
     });
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
@@ -32,8 +44,17 @@ const Dashboard: React.FC = () => {
         });
     };
 
+    const handleSubmit = useCallback(async (data: FormData) => {
+        try {
+            
+            return ;
+        } catch (error) {
+            
+        }
+    }, [])
 
 
+////<Input name='category' icon={FiTag} placeholder='Categoria' maxLength={25}/>
     return (
         <>
             <Title>Fala Mesmo !</Title>
@@ -42,9 +63,12 @@ const Dashboard: React.FC = () => {
                 <Input name='title' icon={FiBookmark} placeholder='Título' maxLength={11} />
                 <Input name='description' icon={FiAlignJustify} placeholder='Descrição' maxLength={11} />
                 <Input name='address' icon={FiMapPin} placeholder='Endereço' maxLength={25}/>
-                <Input name='category' icon={FiTag} placeholder='Categoria' maxLength={25}/>
+                
+                <ComboBox name='category' />
                 <Input name='impact' icon={FiZap} placeholder='Impacto' maxLength={25}/>
 
+                
+                
                 <Button type='submit'>Enviar</Button>
             </Form>
 
