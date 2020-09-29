@@ -48,24 +48,24 @@ const Card: React.FC = () => {
         <Container>
             <UserInfo>
                 <img src={Foto}></img>
-                <p>João pilger</p>
+                <p>Marcela Pilger</p>
 
                 <LikeInfo>
                     <button><FiFlag/></button>
-                    <p>50 apoiaram</p>
+                    <p>20 apoiaram</p>
                 </LikeInfo>
             </UserInfo>
 
             <CardInfo>
-                <h1>Lixo na rua</h1>
-                <p>muito lixo na calcada atrapalhando o pessoal</p>
+                <h1>Poste com luz queimada</h1>
+                <p>O poste principal da rua está queimado </p>
 
-                <p>Rua Osmindo Dietrich, Centro - Igrejinha</p>
+                <p>Rua Coronel Fleck, Centro - Igrejinha</p>
             </CardInfo>
 
             <Infos>
                 <Categoria>
-                    <p>Ameaça</p>
+                    <p>Aviso</p>
                 </Categoria>
 
                     <title>Impacto</title>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback, ChangeEvent, Fragment, useRef, useCallback} from 'react';
+import React, {useEffect, useState, useCallback, ChangeEvent, Fragment, useRef } from 'react';
 
 import {Form} from '@unform/web';
 import {FormHandles} from '@unform/core';
@@ -7,8 +7,9 @@ import Card from '../../components/Card';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import ComboBox from '../../components/ComboBox';
+import ComboBoxImpact from '../../components/ComboBoxImpact';
 
-import {FiBookmark, FiMapPin, FiTag, FiAlignJustify, FiZap} from 'react-icons/fi';
+import {FiBookmark, FiMapPin, FiUser, FiAlignJustify, FiZap} from 'react-icons/fi';
 import {Title, CardContainer} from './styles';
 
 //import {Container, LeafletMapContainer, FormContainer, MarkedPointsContainer, MarkedPoint} from './styles';
@@ -21,13 +22,14 @@ interface FormData {
     description: string;
     address: string;
     category: string;
-    //impact: string,
+    impact: string,
 }
 
 const Dashboard: React.FC = () => {
     const formRef = useRef<FormHandles>(null);
     
     const [formData, setFormData] = useState({
+        user: '',
         title: '',
         description: '',
         address: '',
@@ -60,15 +62,14 @@ const Dashboard: React.FC = () => {
             <Title>Fala Mesmo !</Title>
 
             <Form ref={formRef} onSubmit={() => {}}>
+                <Input name='user' icon={FiUser} placeholder='Nome completo' maxLength={11} />
                 <Input name='title' icon={FiBookmark} placeholder='Título' maxLength={11} />
                 <Input name='description' icon={FiAlignJustify} placeholder='Descrição' maxLength={11} />
                 <Input name='address' icon={FiMapPin} placeholder='Endereço' maxLength={25}/>
                 
                 <ComboBox name='category' />
-                <Input name='impact' icon={FiZap} placeholder='Impacto' maxLength={25}/>
+                <ComboBoxImpact name='impact' />
 
-                
-                
                 <Button type='submit'>Enviar</Button>
             </Form>
 
