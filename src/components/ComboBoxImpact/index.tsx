@@ -1,4 +1,4 @@
-import React, {InputHTMLAttributes, useRef, useState, useEffect } from 'react';
+import React, {SelectHTMLAttributes, useRef, useState, useEffect } from 'react';
 import {useField} from '@unform/core';
 import {IconBaseProps} from 'react-icons';
 import {FiZap as Icon} from 'react-icons/fi'
@@ -6,7 +6,7 @@ import {FiZap as Icon} from 'react-icons/fi'
 import {Container, Error} from './styles';
 
 
-interface ComboProps extends InputHTMLAttributes<HTMLSelectElement>{
+interface ComboProps extends SelectHTMLAttributes<HTMLSelectElement>{
     name: string;
     icon?: React.ComponentType<IconBaseProps>;
 }
@@ -39,7 +39,11 @@ const ComboBoxImpact: React.FC<ComboProps> = ({name, ...rest}) => {
         <Container>
             <Icon size={20}/>
 
-            <select onChange={e => setValue(e.currentTarget.value)} {...rest} >
+            <select 
+            //onChange={e => setValue(e.currentTarget.value)} 
+            ref={inputRef}
+            {...rest} 
+            >
                 { impacts.map( imp => (
                     <option key={imp.value} value={imp.value} >
                         {imp.label}

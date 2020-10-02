@@ -4,8 +4,19 @@ import Foto from '../../assets/rascunho.png';
 import {FiThumbsUp, FiFlag, FiStar} from 'react-icons/fi';
 
 import {Container, UserInfo, CardInfo, Categoria, LikeInfo, Impacto, Infos} from './styles';
-const Card: React.FC = () => {
-    //Darkina GRAFITADAH
+
+interface FormData {
+    user: string;
+    title: string;
+    description: string;
+    address: string;
+    category: string;
+    impact: string,
+}
+
+const Card: React.FC<FormData[]> = (data: FormData[]) => {
+    //Darkina GRAFITADAH]
+
     return (
 
         <>
